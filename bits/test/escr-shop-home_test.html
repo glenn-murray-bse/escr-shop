@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>escr-shop-home test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../escr-shop-home.html">
+  </head>
+  <body>
+
+    <test-fixture id="basic">
+      <template>
+        <escr-shop-home></escr-shop-home>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('escr-shop-home', function() {
+
+        test('instantiating the element works', function() {
+          let element = fixture('basic');
+          assert.equal(element.is, 'escr-shop-home');
+        });
+
+      });
+    </script>
+  </body>
+</html>
