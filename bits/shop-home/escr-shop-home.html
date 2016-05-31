@@ -1,0 +1,70 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-card/paper-card.html">
+<link rel="import" href="/components/iron-icons/social-icons.html">
+
+<!--
+The shop-home element shows a list of categories of products and services.  It also shows any products
+and services marked as "Featured".
+
+Example:
+
+    <escr-shop-home categories="{{categories}}"></escr-shop-home>
+
+Example:
+
+    <escr-shop-home featured="{{featured}}"></escr-shop-home>
+
+Example:
+
+    <escr-shop-home categories="{{categories}}" featured="{{featured}}"></escr-shop-home>
+
+@demo demo/index.html
+@hero hero.svg
+-->
+<dom-module id="escr-shop-home">
+  <template>
+    <style>
+      .with-margin {
+        --paper-card:{
+          margin: 2px;
+        }
+      }
+    </style>
+
+    <template is="dom-repeat" items="[[categories]]" strip-whitespace>
+      <paper-card class="with-margin" heading="[[item.name]]" image="[[item.image]]" flex>
+        <div class="card-content">
+          [[item.description]]
+        </div>
+        <div class="card-actions">
+          <paper-icon-button icon="favorite"></paper-icon-button>
+          <paper-icon-button icon="bookmark"></paper-icon-button>
+          <paper-icon-button icon="social:share"></paper-icon-button>
+        </div>
+      </paper-card>
+    </template>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'escr-shop-home',
+      properties: {
+        /**
+         * Describes the author of the element, but is really just an excuse to
+         * show off JSDoc annotations.
+         *
+         * @type {{id: int, name: string}}
+         */
+        categories: {
+          type: Array,
+          value: function () {
+            return [{id: "1", name: "Dresses", description: "Awesome dresses that work well with chardy!!", image: 'default-img.png'
+            }];
+          }
+        }
+      }
+    });
+  </script>
+</dom-module>
