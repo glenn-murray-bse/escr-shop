@@ -7,6 +7,7 @@
 Install [polymer-cli](https://github.com/Polymer/polymer-cli):
 
     npm install -g polymer-cli
+    npm install -g web-component-tester-istanbul
 
 Need at least v0.3.0
 
@@ -14,12 +15,15 @@ Need at least v0.3.0
 
     git clone https://github.com/Polymer/shop.git
     cd shop
-    bower install
-    npm install -g web-component-tester-istanbul 
+    bower install 
     
-### Start the development server
+### Start the development server (use -o to open a new browser)
 
     polymer serve
+
+### View the documentation and demos at
+
+	[Docs](http://localhost:8080/docs.html)
 
 ### Run web-component-tester tests with code coverage
 
