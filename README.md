@@ -41,7 +41,7 @@ Need at least v0.3.0
 * Go to https://github.com/eat-sleep-code-repeat/escr-shop/issues and pick an issue to work on.
 * Check the existing published brnaches to see if there is a branch for the issue already.
 * Create a new feature branch
-	
+
 	git flow feature start 06-Sample-issue-to-demonstrate-gitflow-branch-naming
 
 ### Commit your changes
@@ -53,16 +53,23 @@ Need at least v0.3.0
 	
 	git flow feature publish 06-Sample-issue-to-demonstrate-gitflow-branch-naming
 
-### Commit your changes and merge with Develop branch
+### Commit your new changes and merge with Develop branch
 
 	git add .
 	git commit -am "A descriptive comment"
 	git pull origin develop
 
+	Fix merge issues
+
+	git add .
+	git commit -am "A descriptive comment"
+	git push
+
 ### Create a Pull Request on Github
 
 	[Pull Request](https://github.com/eat-sleep-code-repeat/escr-shop/compare?expand=1)
 	Assign it to at least one other person to review
+	Watch the Travis CI Integration and make sure everything is green and healthy.
 	DO NOT MERGE ON GitHub!!!
 
 ### Finish off the feature with GitFlow
