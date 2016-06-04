@@ -69,6 +69,7 @@ Need at least v0.3.0
 
 	[Pull Request](https://github.com/eat-sleep-code-repeat/escr-shop/compare?expand=1)
 	Assign it to at least one other person to review
+	Watch the Travis CI Integration and make sure everything is green and healthy.
 	DO NOT MERGE ON GitHub!!!
 
 ### Finish off the feature with GitFlow
