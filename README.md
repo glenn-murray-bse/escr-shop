@@ -77,3 +77,7 @@ Need at least v0.3.0
 	git flow feature finish -F 06-Sample-issue-to-demonstrate-gitflow-branch-naming
 
 	This will merge your changes to Develop and delete both the local and remote branch for you.
+
+### Push your merged Develop branch to gitHub.
+
+	git push
