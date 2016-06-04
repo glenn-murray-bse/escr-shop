@@ -42,7 +42,7 @@ Need at least v0.3.0
 * Check the existing published brnaches to see if there is a branch for the issue already.
 * Create a new feature branch
 	
-	git flow feature start 06-Sample issue to demonstrate gitflow branch naming
+	git flow feature start 06-Sample-issue-to-demonstrate-gitflow-branch-naming
 
 ### Commit your changes
 
@@ -62,4 +62,9 @@ Need at least v0.3.0
 ### Create a Pull Request on Github
 
 	[Pull Request](https://github.com/eat-sleep-code-repeat/escr-shop/compare?expand=1)
-	Add at least on reviewer
+	Assign it to at least one other person to review
+	DO NOT MERGE ON GitHub!!!
+
+### Finish off the feature with GitFlow
+
+	git flow feature finish 06-Sample-issue-to-demonstrate-gitflow-branch-naming
