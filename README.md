@@ -74,4 +74,6 @@ Need at least v0.3.0
 
 ### Finish off the feature with GitFlow
 
-	git flow feature finish 06-Sample-issue-to-demonstrate-gitflow-branch-naming
+	git flow feature finish -F 06-Sample-issue-to-demonstrate-gitflow-branch-naming
+
+	This will merge your changes to Develop and delete both the local and remote branch for you.
