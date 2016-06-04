@@ -53,7 +53,7 @@ Need at least v0.3.0
 	
 	git flow feature publish 06-Sample-issue-to-demonstrate-gitflow-branch-naming
 
-### Commit your changes and merge with Develop branch
+### Commit your new changes and merge with Develop branch
 
 	git add .
 	git commit -am "A descriptive comment"
