@@ -51,4 +51,15 @@ Need at least v0.3.0
 
 ### Publish your branch so others can view your work
 	
-	git flow feature publish 06-Sample issue to demonstrate gitflow branch naming
+	git flow feature publish 06-Sample-issue-to-demonstrate-gitflow-branch-naming
+
+### Commit your changes and merge with Develop branch
+
+	git add .
+	git commit -am "A descriptive comment"
+	git pull origin develop
+
+### Create a Pull Request on Github
+
+	[Pull Request](https://github.com/eat-sleep-code-repeat/escr-shop/compare?expand=1)
+	Add at least on reviewer
