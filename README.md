@@ -39,10 +39,10 @@ Need at least v0.3.0
 ### Start a new feature branch.  
 
 * Go to https://github.com/eat-sleep-code-repeat/escr-shop/issues and pick an issue to work on.
-* Check the existing published brnaches to see if there is a branch for the issue already.
+* Check the existing published branches to see if there is a branch for the issue already.
 * Create a new feature branch
 
-	git flow feature start 06-Sample-issue-to-demonstrate-gitflow-branch-naming
+	```git flow feature start 06-Sample-issue-to-demonstrate-gitflow-branch-naming```
 
 ### Commit your changes
 
