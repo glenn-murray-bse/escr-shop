@@ -11,3 +11,6 @@ before_script:
 - npm install -g bower
 script:
 - polymer test --plugin web-component-tester-istanbul
+after_success:
+- polymer build
+- firebase deploy --email vince.sesto@gmail.com --password tr1b0y1778
