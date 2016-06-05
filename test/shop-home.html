@@ -46,17 +46,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       assert.equal(element.is, 'shop-home');
     });
 
-    test('set visibility sets the element visibility', function (done) {
+    test('set visibility to true triggers the _onChangeSection', function (done) {
       let element = fixture('basic');
       flush(function () {
         element.visible = true;
-//        var domElement = Polymer.dom(home.root).querySelectorAll('.item');
-      var domElement = Polymer.dom(home.root).querySelector('shop-home[name="main"]');
+        var domElement = Polymer.dom(home.root).querySelector('shop-home[name="main"]');
         console.log('test' + domElement);
         done();
       });
+    });
 
-
+    test('set visibility to false does not trigger the _onChangeSection', function (done) {
+      let element = fixture('basic');
+      flush(function () {
+        element.visible = false;
+        done();
+      });
     });
 
     test('number of categories shown equals the number in the data list', function (done) {
