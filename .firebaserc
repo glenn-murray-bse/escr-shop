@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "escr-shop"
+    "default": "escr-shop-phil",
+    "personal-dev": "escr-shop-phil"
   }
 }
