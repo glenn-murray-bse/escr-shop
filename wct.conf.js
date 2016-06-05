@@ -7,7 +7,7 @@ module.exports = {
       "dir": "./coverage",
       "reporters": ["text-summary", "lcov"],
       "include": [
-        "src/*.html"
+        "/src/shop-home.html"
       ],
       "exclude": [
 
