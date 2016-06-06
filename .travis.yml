@@ -21,4 +21,4 @@ after_success:
 #- firebase deploy --project "${FIREBASE_PROJECT_VINCE}" --token "${FIREBASE_TOKEN_VINCE}"
 - branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 - echo $branch
-- if [[ ${branch} == *"develop"* ]]; then firebase deploy --project "${FIREBASE_PROJECT_VINCE}" --token "${FIREBASE_TOKEN_VINCE}" ; fi
+- if [[ ${branch} == *"feature"* ]]; then firebase deploy --project "${FIREBASE_PROJECT_VINCE}" --token "${FIREBASE_TOKEN_VINCE}" ; fi
