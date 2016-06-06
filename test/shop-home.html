@@ -83,15 +83,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 //    })
 //  });
 
-  suite('shop-home tests', function () {
+  describe('shop-home tests', function () {
     var home;
 
 //    setup(function () {
 //      home = fixture('data-bound');
 //    });
 
-    test('number of categories shown equals the number in the categories data-binding', function (done) {
+    before(function () {
       home = fixture('data-bound');
+    });
+
+    it('number of categories shown equals the number in the categories data-binding', function (done) {
+
       flush(function () {
         var items = Polymer.dom(home.root).querySelectorAll('.item');
         assert.equal(2, items.length);
