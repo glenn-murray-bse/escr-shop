@@ -14,4 +14,5 @@ script:
 after_success:
 - polymer build
 - npm install -g firebase-tools
-- firebase deploy --email ${FIREBASE_USERNAME} --password ${FIREBASE_PASSWORD}
+- STATUS=`git status`
+- if [[ ${STATUS} == *"feature"* ]]; then firebase deploy --email ${FIREBASE_USERNAME} --password ${FIREBASE_PASSWORD}; fi
