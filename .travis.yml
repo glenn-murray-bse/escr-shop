@@ -14,5 +14,5 @@ script:
 - polymer test --plugin web-component-tester-istanbul
 after_success:
 - polymer build
-- firebase deploy --email ${FIREBASE_USERNAME} --password ${FIREBASE_PASSWORD}
+- firebase --project escr-shop-dev deploy
 #- STATUS=`git status`; if [[ ${STATUS} == *"feature"* ]]; then firebase deploy --email ${FIREBASE_USERNAME} --password ${FIREBASE_PASSWORD}; fi
