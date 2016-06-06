@@ -37,8 +37,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   suite('shop-home tests', function () {
     var home;
     a11ySuite('basic');
+
     setup(function () {
       home = fixture('basic');
+    });
+
+    before(function() {
+      // runs before all tests in this block
     });
 
     test('instantiating the shop-home works', function () {
@@ -87,6 +92,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     setup(function () {
       home = fixture('data-bound');
+    });
+
+    before(function() {
+      // runs before all tests in this block
     });
 
     test('number of categories shown equals the number in the categories data-binding', function (done) {
