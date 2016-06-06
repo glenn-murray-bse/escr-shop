@@ -43,14 +43,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     });
 
     it('instantiating the shop-home works', function () {
-      let element = fixture('basic');
-      assert.equal(element.is, 'shop-home');
+      assert.equal(home.is, 'shop-home');
     });
 
     it('set visibility to true triggers the _onChangeSection', function (done) {
-      let element = fixture('basic');
       flush(function () {
-        element.visible = true;
+        home.visible = true;
         var domElement = Polymer.dom(home.root).querySelector('shop-home[name="main"]');
         console.log('test' + domElement);
         done();
