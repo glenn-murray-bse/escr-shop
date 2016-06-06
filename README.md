@@ -14,6 +14,7 @@ Need at least v0.3.0
 ##### Setup
 
     git clone git@github.com:eat-sleep-code-repeat/escr-shop.git .
+    npm install -g bower
     bower install 
     
 ### Start the development server (use -o to open a new browser)
@@ -53,6 +54,10 @@ Need at least v0.3.0
 	
 	git flow feature publish 06-Sample-issue-to-demonstrate-gitflow-branch-naming
 
+### If you have new changes that need to be published you will now use the following
+
+       git push
+
 ### Commit your new changes and merge with Develop branch
 
 	git add .
@@ -81,3 +86,11 @@ Need at least v0.3.0
 ### Push your merged Develop branch to gitHub.
 
 	git push
+
+### Automated testing through travic-ci
+
+Changes pushed to branches will automatically be built on travi-ci using the .travis.yml file located in the root directory
+Even if you do not have an account on travic-ci, you can still see the build at the following location:
+
+        https://travis-ci.org/eat-sleep-code-repeat/escr-shop
+
