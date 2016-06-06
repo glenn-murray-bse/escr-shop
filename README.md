@@ -94,3 +94,6 @@ Even if you do not have an account on travic-ci, you can still see the build at 
 
         https://travis-ci.org/eat-sleep-code-repeat/escr-shop
 
+### Automated Hosting through Firebase
+
+Working on the configuration files for travis-ci to push changes to firebase when testing is successful.
