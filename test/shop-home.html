@@ -22,39 +22,92 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 </head>
 <body>
+<test-fixture id="basic">
+  <template>
+    <shop-home name="main"></shop-home>
+  </template>
+</test-fixture>
+<test-fixture id="data-bound">
+  <template>
+    <shop-home
+      categories='[{"name": "ladies_outerwear", "title": "Ladies Outerwear Demo", "image": "images/pretty-woman-traffic-young-vintage.jpg", "placeholder": ""},{"name": "long_dresses", "title": "Long Dresses", "image": "images/pretty-woman-traffic-young-vintage.jpg", "placeholder": ""}]'></shop-home>
+  </template>
+</test-fixture>
+<script>
+  suite('shop-home tests', function () {
+    var home;
+    a11ySuite('basic');
 
-  <test-fixture id="basic">
-    <template>
-       <shop-home></shop-home>
-    </template>
-  </test-fixture>
-
-  <script>
-    suite('shop-home tests', function() {
-      var home;
-
-      setup(function() {
-        home = fixture('basic');
-      });
-
-      test('Item lengths should be equalled', function(done) {
-        // Test categories property
-        home.categories = [
-          {name: 'furniture', title: 'Furniture'},
-          {name: 'food', title: 'Food'},
-          {name: 'fashion', title: 'Fashion'}
-        ];
-
-        // Data bindings will stamp out new DOM asynchronously
-        // so wait to check for updates
-        flush(function() {
-          var items = Polymer.dom(home.root).querySelectorAll('.item');
-          assert.equal(home.categories.length, items.length);
-          done();
-        });
-      })
+    setup(function () {
+      home = fixture('basic');
     });
-  </script>
+
+    before(function() {
+      // runs before all tests in this block
+    });
+
+    test('instantiating the shop-home works', function () {
+      let element = fixture('basic');
+      assert.equal(element.is, 'shop-home');
+    });
+
+    test('set visibility to true triggers the _onChangeSection', function (done) {
+      let element = fixture('basic');
+      flush(function () {
+        element.visible = true;
+        var domElement = Polymer.dom(home.root).querySelector('shop-home[name="main"]');
+        console.log('test' + domElement);
+        done();
+      });
+    });
+
+    test('set visibility to false does not trigger the _onChangeSection', function (done) {
+      let element = fixture('basic');
+      flush(function () {
+        element.visible = false;
+        done();
+      });
+    });
+
+    test('number of categories shown equals the number in the data list', function (done) {
+      // Test categories property
+      home.categories = [
+        {name: 'furniture', title: 'Furniture'},
+        {name: 'food', title: 'Food'},
+        {name: 'fashion', title: 'Fashion'}
+      ];
+
+      // Data bindings will stamp out new DOM asynchronously
+      // so wait to check for updates
+      flush(function () {
+        var items = Polymer.dom(home.root).querySelectorAll('.item');
+        assert.equal(home.categories.length, items.length);
+        done();
+      });
+    })
+  });
+
+  suite('shop-home tests', function () {
+    var home;
+
+    setup(function () {
+      home = fixture('data-bound');
+    });
+
+    before(function() {
+      // runs before all tests in this block
+    });
+
+    test('number of categories shown equals the number in the categories data-binding', function (done) {
+
+      flush(function () {
+        var items = Polymer.dom(home.root).querySelectorAll('.item');
+        assert.equal(2, items.length);
+        done();
+      });
+    })
+  });
+</script>
 
 </body>
 </html>

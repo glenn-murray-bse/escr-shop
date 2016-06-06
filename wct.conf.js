@@ -1,13 +1,13 @@
 module.exports = {
   "plugins": {
     "local": {
-      "browsers": ["chrome"]
+      "browsers": []
     },
     "istanbul": {
       "dir": "./coverage",
       "reporters": ["text-summary", "lcov"],
       "include": [
-        "src/*.html"
+        "/src/shop-home.html"
       ],
       "exclude": [
 
