@@ -91,13 +91,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 //    });
 
     test('number of categories shown equals the number in the categories data-binding', function (done) {
-
-//      flush(function () {
-//        var items = Polymer.dom(home.root).querySelectorAll('.item');
-//        assert.equal(2, items.length);
-//        done();
-//      });
-      done();
+      home = fixture('data-bound');
+      flush(function () {
+        var items = Polymer.dom(home.root).querySelectorAll('.item');
+        assert.equal(2, items.length);
+        done();
+      });
     })
   });
 </script>
