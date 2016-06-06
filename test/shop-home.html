@@ -42,10 +42,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       home = fixture('basic');
     });
 
-    before(function() {
-      // runs before all tests in this block
-    });
-
     test('instantiating the shop-home works', function () {
       let element = fixture('basic');
       assert.equal(element.is, 'shop-home');
@@ -92,10 +88,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     setup(function () {
       home = fixture('data-bound');
-    });
-
-    before(function() {
-      // runs before all tests in this block
     });
 
     test('number of categories shown equals the number in the categories data-binding', function (done) {
