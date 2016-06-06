@@ -3,13 +3,13 @@ SF:/Projects/escr/src/shop-home.html
 FN:162,(anonymous_1)
 FNF:1
 FNH:1
-FNDA:20,(anonymous_1)
+FNDA:18,(anonymous_1)
 DA:133,3
-DA:163,20
-DA:164,18
+DA:163,18
+DA:164,16
 LF:3
 LH:3
-BRDA:163,1,0,18
+BRDA:163,1,0,16
 BRDA:163,1,1,2
 BRF:2
 BRH:2
