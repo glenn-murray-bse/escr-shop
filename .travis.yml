@@ -18,4 +18,4 @@ script:
 - polymer test
 after_success:
 - polymer build
-- firebase deploy --project "${FIREBASE_TOKEN_VINCE}" --token "${FIREBASE_TOKEN_VINCE}"
+- firebase deploy --project "${FIREBASE_PROJECT_VINCE}" --token "${FIREBASE_TOKEN_VINCE}"
