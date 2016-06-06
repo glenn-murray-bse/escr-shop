@@ -4,6 +4,8 @@
 
 ##### Prerequisites
 
+Install the current LTS version (4.x) of Node.js or newer.
+
 Install [polymer-cli](https://github.com/Polymer/polymer-cli):
 
     npm install -g polymer-cli
