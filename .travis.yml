@@ -14,4 +14,4 @@ script:
 - polymer test
 after_success:
 - polymer build
-- firebase deploy --project escr-shop-dev --token "${FIREBASE_TOKEN}"
+- firebase deploy --project "${FIREBASE_TOKEN_VINCE}" --token "${FIREBASE_TOKEN_VINCE}"
