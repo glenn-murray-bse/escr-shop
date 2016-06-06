@@ -13,4 +13,5 @@ script:
 - polymer test --plugin web-component-tester-istanbul
 after_success:
 - polymer build
-- firebase deploy --email vince.sesto@gmail.com --password tr1b0y1778
+- npm install -g firebase-tools
+#- firebase deploy --email vince.sesto@gmail.com --password tr1b0y1778
