@@ -16,7 +16,7 @@ before_script:
 - npm install -g firebase-tools
 - bower install
 script:
-- polymer test --plugin web-component-tester-istanbul
+- polymer test
 after_success:
 - polymer build
 #- firebase deploy --project "${FIREBASE_PROJECT_VINCE}" --token "${FIREBASE_TOKEN_VINCE}"
