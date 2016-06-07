@@ -1,7 +1,7 @@
 module.exports = {
   "plugins": {
     "local": {
-      "browsers": []
+      "browsers": ["chrome"]
     },
     "istanbul": {
       "dir": "./coverage",
