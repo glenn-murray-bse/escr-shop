@@ -4,6 +4,8 @@
 
 ##### Prerequisites
 
+Install the current LTS version (4.x) of Node.js or newer.
+
 Install [polymer-cli](https://github.com/Polymer/polymer-cli):
 
     npm install -g polymer-cli
@@ -98,7 +100,7 @@ Even if you do not have an account on travic-ci, you can still see the build at 
 
 The "firebase deploy" line in the "after success" area of the travis file will look similar to the line below:
 
-        - firebase deploy --project "${FIREBASE_TOKEN_VINCE}" --token "${FIREBASE_TOKEN_VINCE}"
+        - firebase deploy --project "${FIREBASE_PROJECT_VINCE}" --token "${FIREBASE_TOKEN_VINCE}"
 
 To allow travis to build to your firebase deployment, you need to first set up a token for firebase, and then add
 parameters to reflect your deployment in travis-ci.

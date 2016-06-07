@@ -34,42 +34,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </template>
 </test-fixture>
 <script>
-  suite('shop-home tests', function () {
+  describe('shop-home default tests', function () {
     var home;
     a11ySuite('basic');
 
-    setup(function () {
+    beforeEach(function () {
       home = fixture('basic');
     });
 
-    before(function() {
-      // runs before all tests in this block
+    it('instantiating the shop-home works', function () {
+      assert.equal(home.is, 'shop-home');
     });
 
-    test('instantiating the shop-home works', function () {
-      let element = fixture('basic');
-      assert.equal(element.is, 'shop-home');
-    });
-
-    test('set visibility to true triggers the _onChangeSection', function (done) {
-      let element = fixture('basic');
+    it('set visibility to true triggers the _onChangeSection', function (done) {
       flush(function () {
-        element.visible = true;
+        home.visible = true;
         var domElement = Polymer.dom(home.root).querySelector('shop-home[name="main"]');
         console.log('test' + domElement);
         done();
       });
     });
 
-    test('set visibility to false does not trigger the _onChangeSection', function (done) {
-      let element = fixture('basic');
+    it('set visibility to false does not trigger the _onChangeSection', function (done) {
       flush(function () {
-        element.visible = false;
+        home.visible = false;
         done();
       });
     });
 
-    test('number of categories shown equals the number in the data list', function (done) {
+    it('number of categories shown equals the number in the data list', function (done) {
       // Test categories property
       home.categories = [
         {name: 'furniture', title: 'Furniture'},
@@ -87,19 +80,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     })
   });
 
-  suite('shop-home tests', function () {
+  describe('shop-home tests', function () {
     var home;
 
-    setup(function () {
+    beforeEach(function () {
       home = fixture('data-bound');
     });
-
-    before(function() {
-      // runs before all tests in this block
-    });
-
-    test('number of categories shown equals the number in the categories data-binding', function (done) {
-
+    it('number of categories shown equals the number in the categories data-binding', function (done) {
       flush(function () {
         var items = Polymer.dom(home.root).querySelectorAll('.item');
         assert.equal(2, items.length);
