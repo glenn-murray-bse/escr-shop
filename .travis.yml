@@ -17,6 +17,7 @@ before_script:
 - bower install
 script:
 - polymer test
+- selenium-standalone start
 - npm test
 after_success:
 - polymer build
