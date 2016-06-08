@@ -52,15 +52,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           assert.equal(event.detail.title, 'Home');
           done();
         });
+        home.visible = false;
         home.visible = true;
-        done();
       });
     });
 
-    it('set visibility to false does not trigger the _onChangeSection', function (done) {
+    it('set visibility to false does not trigger the _onChangeSection', function () {
       flush(function () {
+        home.addEventListener('change-section', function(event) {
+          throw new Error("change-section event should not fire");
+        });
         home.visible = false;
-        done();
       });
     });
 
