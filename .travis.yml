@@ -5,7 +5,7 @@ node_js:
 before_install:
 - npm install selenium-standalone@latest -g
 - selenium-standalone install
-- selenium-standalone start &
+#- selenium-standalone start &
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 - sleep 3
@@ -20,6 +20,7 @@ before_script:
 - bower install
 script:
 - polymer test
+- selenium-standalone start &
 - npm test
 after_success:
 - polymer build
