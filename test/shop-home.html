@@ -48,9 +48,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     it('set visibility to true triggers the _onChangeSection', function (done) {
       flush(function () {
+        home.addEventListener('change-section', function(event) {
+          assert.equal(event.detail.title, 'Home');
+          done();
+        });
         home.visible = true;
-        var domElement = Polymer.dom(home.root).querySelector('shop-home[name="main"]');
-        console.log('test' + domElement);
         done();
       });
     });
