@@ -35,6 +35,7 @@ exports.config = {
   reporters: ['dot'],
 
   cucumberOpts: {
-    require: ['./specs/steps/step-definitions.js']
+    require: ['./specs/steps/step-definitions.js'],
+    tags:['@pj']
   }
 };
