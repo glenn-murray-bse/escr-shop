@@ -1,5 +1,6 @@
 var assert = require('assert');
 var chai = require('chai');
+var webdriverio = require('webdriverio');
 
 urlUtils = require('../../specs/steps/support/utils.js');
 var ladiesOutwear = require('./pageElements/ladiesOutwear.js');
@@ -24,7 +25,7 @@ module.exports = function () {
     return browser.pause(secs * 1000);
   });
 
-  this.Then(/^I should see "([^"]*)" heading/, function (heading) {
+  this.Then(/^I should see "(.*)" heading/, function (heading) {
     var selector = ladiesOutwear.heading + heading;
     console.log(selector);
     var expectedHeading = browser.getText(selector);
@@ -33,19 +34,24 @@ module.exports = function () {
 
   });
 
+  this.Then(/^I click the "(.*)" link/, function (tabName) {
+    browser.isVisible(homePage.tabs);
+    return browser.elements(homePage.tabs).click('='+tabName);
+  });
+
   this.Then(/^I click "(.*)" link/, function (tabName) {
-    console.log(tabName);
-    //var selector = browser.element("a="+tabName);
-    //console.log(selector);
-    //browser.click(selector);
-
-    return browser.elements(homePage.tabs).click('=Ladies Outerwear');
-
-
-
-    })
-
-
-
+   var tabs = browser.elements(homePage.tabs);
+    var i=0;
+        for(i; i < tabs.value.length; i++){
+          var link = tabs.getText();
+          console.log(link[i]);
+          if(link[i] === tabName){
+            console.log("I am here");
+            return browser.click('='+link[i]);
+          }else{
+            console.log("Nothing matched");
+          }
+        }
+      });
 };
 
