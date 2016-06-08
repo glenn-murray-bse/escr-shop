@@ -1,6 +1,6 @@
 Feature: Test
 
-  Scenario: Go to Google
+  Scenario: Go to Men's Outwear page
     Given Go to the route "list/mens_outerwear"
     Then  The title of the page is "SHOP"
 
