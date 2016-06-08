@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+    <testsuite name="test" timestamp="2016-06-07T21:56:21" time="0.357" tests="0" failures="0" errors="0" skipped="0">
+        <properties>
+            <property name="specId" value="ac9639cd04d7f96ae55544b918d8a922"/>
+            <property name="suiteName" value="Test"/>
+            <property name="capabilities" value="chrome"/>
+        </properties>
+    </testsuite>
+    <testsuite name="go_to_google" timestamp="2016-06-07T21:56:21" time="0.356" tests="2" failures="0" errors="0" skipped="0">
+        <properties>
+            <property name="specId" value="ac9639cd04d7f96ae55544b918d8a922"/>
+            <property name="suiteName" value="Go to Google"/>
+            <property name="capabilities" value="chrome"/>
+        </properties>
+        <testcase classname="chrome.Go to Google" name="Go to the route &quot;list/mens_outerwear&quot;" time="0.493"/>
+        <testcase classname="chrome.Go to Google" name="The title of the page is &quot;SHOP&quot;" time="0.166"/>
+    </testsuite>
+</testsuites>
