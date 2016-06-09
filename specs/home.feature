@@ -15,16 +15,16 @@ Feature: Test
     And I wait for "2" seconds
     And I should see "Ladies T-Shirts" heading
 
-  @pj
+    @pj
   Scenario: Go to Shop and click women wear
     Given Go to the route ""
-    And I click the "Ladies Outerwear" link
+    And I click "Ladies Outerwear" link
     And I should see "Ladies Outerwear" heading
-    And I click the "Men's T-Shirts" link
+    And I click "Men's T-Shirts" link
     And I should see "Men's T-Shirts" heading
-    And I click the "Ladies T-Shirts" link
+    And I click "Ladies T-Shirts" link
     And I should see "Ladies T-Shirts" heading
-    And I click the "Men's Outerwear" link
+    And I click "Men's Outerwear" link
     And I should see "Men's Outerwear" heading
     And I wait for "2" seconds
 

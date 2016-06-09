@@ -36,22 +36,32 @@ module.exports = function () {
 
   this.Then(/^I click the "(.*)" link/, function (tabName) {
     browser.isVisible(homePage.tabs);
-    return browser.elements(homePage.tabs).click('='+tabName);
+    return browser.elements(homePage.tabs).click('=' + tabName);
   });
 
   this.Then(/^I click "(.*)" link/, function (tabName) {
-   var tabs = browser.elements(homePage.tabs);
-    var i=0;
-        for(i; i < tabs.value.length; i++){
-          var link = tabs.getText();
-          console.log(link[i]);
-          if(link[i] === tabName){
-            console.log("I am here");
-            return browser.click('='+link[i]);
-          }else{
-            console.log("Nothing matched");
-          }
-        }
-      });
+
+    //----------------Slow Way----------------------------------
+    //var tabs = browser.elements(homePage.tabs);
+    // var i=0;
+    //     for(i; i < tabs.value.length; i++){
+    //       var link = tabs.getText();
+    //       console.log(link[i]);
+    //       if(link[i] === tabName){
+    //         console.log("I am here");
+    //         return browser.click('='+link[i]);
+    //       }else{
+    //         console.log("Nothing matched");
+    //       }
+    //     }
+    //
+
+//----------------Fast Way----------------------------------
+    return browser.elements(homePage.tabs).value.filter(function (links) {
+      if(browser.elementIdText(links.ELEMENT).value === tabName) {
+        browser.elementIdClick(links.ELEMENT);
+      }
+    })
+  });
 };
 
