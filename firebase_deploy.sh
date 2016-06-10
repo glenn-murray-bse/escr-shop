@@ -5,7 +5,7 @@ FIREBASE_TOKEN_VINCE=$2
 #$FIREBASE_PROJECT_VINCE="escr-shop-dev"
 #$FIREBASE_TOKEN_VINCE="1/QGZ73kIZI9BbP17zM_xkha5XWsuJqhXx-nHAYqj3rDE"
 BRANCH=`git branch | sed -n -e 's/^\* \(.*\)/\1/p'`
-TRAVIS_BRANCH="develop"
+TRAVIS_BRANCH=$3
 
 # Test the branch and deploy where needed
 if [[ ${TRAVIS_BRANCH} == "feature" ]]
