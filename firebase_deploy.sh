@@ -20,4 +20,5 @@ else
 	echo "Unknown branch type...not deploying"
 fi
 
+sleep 10
 echo "Deploy script complete"
