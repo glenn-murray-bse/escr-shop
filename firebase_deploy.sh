@@ -19,3 +19,5 @@ then
 else
 	echo "Unknown branch type...not deploying"
 fi
+
+echo "Deploy script complete"
