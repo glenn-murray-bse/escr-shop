@@ -1,5 +1,7 @@
 #!/bin/bash
 
+FIREBASE_PROJECT_VINCE=$1
+FIREBASE_TOKEN_VINCE=$2
 #FIREBASE_PROJECT_VINCE="escr-shop-dev"
 #FIREBASE_TOKEN_VINCE="1/QGZ73kIZI9BbP17zM_xkha5XWsuJqhXx-nHAYqj3rDE"
 BRANCH=`git branch | sed -n -e 's/^\* \(.*\)/\1/p'`
@@ -20,5 +22,3 @@ else
 	echo "Unknown branch type...not deploying"
 fi
 
-sleep 10
-echo "Deploy script complete"
