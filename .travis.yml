@@ -20,8 +20,7 @@ before_script:
 - selenium-standalone start &
 script:
 - polymer test
-- npm test
+#- npm test
 after_success:
 - polymer build
-after_script:
-- ./firebase_deploy.sh
+- bash firebase_deploy.sh
