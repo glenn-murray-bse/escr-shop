@@ -98,7 +98,8 @@ Even if you do not have an account on travic-ci, you can still see the build at 
 
 ### Automated Hosting through Firebase
 
-The "firebase deploy" line in the "after success" area of the travis file will look similar to the line below:
+The "firebase deploy" line in the "after success" area of the travis file will runn the firebase deploy script, 
+which includes a similar line as below:
 
         - firebase deploy --project "${FIREBASE_PROJECT_VINCE}" --token "${FIREBASE_TOKEN_VINCE}"
 
@@ -111,4 +112,4 @@ To generate the firebase token, you need to run from you base directory:
 
 Then log onto travis-ci.org and add the settings that you will use to define your project and your firebase token.
 
-
+NOTE: for now, we do not deploy feature branches, develop branches, deploy to dev and master will deploy to production.
