@@ -23,4 +23,5 @@ script:
 - npm test
 after_success:
 - polymer build
-- firebase deploy --project "${FIREBASE_PROJECT_VINCE}" --token "${FIREBASE_TOKEN_VINCE}"
+after_script:
+- ./firebase_deploy.sh
