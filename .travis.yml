@@ -23,4 +23,4 @@ script:
 #- npm test
 after_success:
 - polymer build
-- bash firebase_deploy.sh
+- ./firebase_deploy.sh
