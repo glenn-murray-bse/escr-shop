@@ -1,11 +1,10 @@
-var assert = require('assert');
-var chai = require('chai');
-var webdriverio = require('webdriverio');
-
 urlUtils = require('../../specs/steps/support/utils.js');
-var ladiesOutwear = require('./pageElements/ladiesOutwear.js');
+var common = require('./pageElements/common.js');
+var shopDetail = require('./pageElements/shopDetail.js');
 var homePage = require('./pageElements/homePage.js');
 
+var assert = require('assert');
+var chai = require('chai');
 var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 var expect = chai.expect;
@@ -26,7 +25,7 @@ module.exports = function () {
   });
 
   this.Then(/^I should see "(.*)" heading/, function (heading) {
-    var selector = ladiesOutwear.heading + heading;
+    var selector = common.heading + heading;
     console.log(selector);
     var expectedHeading = browser.getText(selector);
     console.log("expectedHeading :" + expectedHeading);
@@ -37,6 +36,23 @@ module.exports = function () {
   this.Then(/^I click the "(.*)" link/, function (tabName) {
     browser.isVisible(homePage.tabs);
     return browser.elements(homePage.tabs).click('=' + tabName);
+  });
+
+  this.Then(/^total no of items on the page are "(\d+)"/, function (totalItems) {
+    var expectedCount = browser.elements(common.noOfItems).value.length;
+      return expect(expectedCount.toString()).to.equal(totalItems.toString());
+  });
+
+  this.Then(/^the item "(.*)" is "(.*)"/, function (selector, value) {
+     var val = browser.getText(shopDetail.getItemDetail(selector));
+    console.log(val);
+    return expect(val.toString()).to.equal(value.toString());
+  });
+
+  this.Then(/^I click item (\d+)/, function (itemNumber) {
+    var itemId = parseInt(itemNumber - 1);
+    var element =  browser.elements('.grid a').value[itemId];
+      return browser.elementIdClick(element.ELEMENT);
   });
 
   this.Then(/^I click "(.*)" link/, function (tabName) {
