@@ -1,7 +1,8 @@
-urlUtils = require('../../specs/steps/support/utils.js');
-var common = require('./pageElements/common.js');
-var shopDetail = require('./pageElements/shopDetail.js');
-var homePage = require('./pageElements/homePage.js');
+urlUtils = require('../support/utils.js');
+var common = require('./../pageElements/common.js');
+var shopDetail = require('./../pageElements/shopDetail.js');
+var homePage = require('./../pageElements/homePage.js');
+var cart = require('./../pageElements/shopCart.js');
 
 var assert = require('assert');
 var chai = require('chai');
@@ -13,6 +14,8 @@ module.exports = function () {
 
   this.Given(/^Go to the route "([^"]*)"$/, function (url) {
     browser.url('http://localhost:8080/' + url);
+    return browser.isVisible(homePage.tabs);
+
   });
 
   this.Then(/^The title of the page is "([^"]*)"$/, function (expectedTitle) {
@@ -26,7 +29,6 @@ module.exports = function () {
 
   this.Then(/^I should see "(.*)" heading/, function (heading) {
     var selector = common.heading + heading;
-    console.log(selector);
     var expectedHeading = browser.getText(selector);
     console.log("expectedHeading :" + expectedHeading);
     return expect(heading).to.equal(expectedHeading);
@@ -45,7 +47,6 @@ module.exports = function () {
 
   this.Then(/^the item "(.*)" is "(.*)"/, function (selector, value) {
      var val = browser.getText(shopDetail.getItemDetail(selector));
-    console.log(val);
     return expect(val.toString()).to.equal(value.toString());
   });
 
@@ -55,29 +56,31 @@ module.exports = function () {
       return browser.elementIdClick(element.ELEMENT);
   });
 
+  this.Then(/^I click "(.*)" button/, function (buttonName) {
+    return browser.element('button='+buttonName).click();
+  });
+
   this.Then(/^I click "(.*)" link/, function (tabName) {
-
-    //----------------Slow Way----------------------------------
-    //var tabs = browser.elements(homePage.tabs);
-    // var i=0;
-    //     for(i; i < tabs.value.length; i++){
-    //       var link = tabs.getText();
-    //       console.log(link[i]);
-    //       if(link[i] === tabName){
-    //         console.log("I am here");
-    //         return browser.click('='+link[i]);
-    //       }else{
-    //         console.log("Nothing matched");
-    //       }
-    //     }
-    //
-
-//----------------Fast Way----------------------------------
     return browser.elements(homePage.tabs).value.filter(function (links) {
       if(browser.elementIdText(links.ELEMENT).value === tabName) {
         browser.elementIdClick(links.ELEMENT);
       }
     })
+  });
+
+  this.Then(/^I select "(.*)" from the "(.*)" dropdown/, function (fieldName, value) {
+    return browser.elements('label').value.filter(function (labels) {
+      if(browser.elementIdText(labels.ELEMENT).value === fieldName) {
+        var selectBox = browser.element('#'+fieldName.toLowerCase()+'Select');
+        return selectBox.selectByValue(value);
+      }
+    });
+  });
+
+  this.Then(/^I should see "(\d+)" items in shopping Cart/, function (items) {
+    var expectedCount = browser.getText(cart.itemsInBasket);
+    console.log(expectedCount);
+    return expect(expectedCount).to.equal(items);
   });
 };
 

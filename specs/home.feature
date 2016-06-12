@@ -26,18 +26,14 @@ Feature: Test
   @pj
   Scenario: Go to Men's Outwear page
     Given Go to the route "list/mens_outerwear"
-    And I wait for "3" seconds
     Then total no of items on the page are "16"
     When I click item 3
-   Then the item "heading" is "Green Flex Fleece Zip Hoodie"
-  And I wait for "3" seconds
-  #And the item "" is ""
-  #    When I select "L" in "Size" dropdown field
-#    And I select "2" in "Quantity" dropdown field
-
-
-#    And I click "ADD TO CART" button
-#    And I click "CHECKOUT" button
-#    Then I should see "1" item in cart
-
-
+    Then the item "heading" is "Green Flex Fleece Zip Hoodie"
+    And the item "price" is "$45.65"
+    When I select "Size" from the "L" dropdown
+    And I select "Quantity" from the "5" dropdown
+    And I click "Add to Cart" button
+    And I wait for "1" seconds
+    Then a dialog is displayed with title "Added to cart"
+    When I click the "View Cart" dialog button
+    And I should see "5" items in shopping Cart
