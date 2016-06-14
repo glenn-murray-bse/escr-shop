@@ -5,10 +5,10 @@
 TRAVIS_BRANCH=$3
 
 # Test the branch and deploy where needed
-if [[ ${TRAVIS_BRANCH} == *"feature"* ]]
+if [[ ${TRAVIS_BRANCH} == *"develop"* ]]
 then
 	echo "Feature branch does not get deployed to firebase"
-elif [[ ${TRAVIS_BRANCH} == *"develop"* ]]
+elif [[ ${TRAVIS_BRANCH} == *"feature"* ]]
 then
 	echo "Deploy to dev firebase environment"
 	firebase deploy --project "${FIREBASE_PROJECT_VINCE}" --token "${FIREBASE_TOKEN_VINCE}"
