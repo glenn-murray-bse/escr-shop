@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#FIREBASE_PROJECT_VINCE=$1
-#FIREBASE_TOKEN_VINCE=$2
+FIREBASE_PROJECT_VINCE=$1
+FIREBASE_TOKEN_VINCE=$2
 TRAVIS_BRANCH=$3
 
 # Test the branch and deploy where needed
