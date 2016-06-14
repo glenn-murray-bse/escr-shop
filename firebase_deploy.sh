@@ -1,8 +1,8 @@
 #!/bin/bash
 
-FIREBASE_PROJECT_VINCE=$1
-FIREBASE_TOKEN_VINCE=$2
-TRAVIS_BRANCH=$3
+TRAVIS_BRANCH=$1
+FIREBASE_PROJECT_VINCE=$2
+FIREBASE_TOKEN_VINCE=$3
 
 # Test the branch and deploy where needed
 if [[ ${TRAVIS_BRANCH} == *"develop"* ]]
