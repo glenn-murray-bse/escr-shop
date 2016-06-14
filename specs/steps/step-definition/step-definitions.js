@@ -35,12 +35,13 @@ module.exports = function () {
 
   });
 
-  this.Then(/^I click the "(.*)" link/, function (tabName) {
+  this.Then(/^I click the "(.*)" link/, function (linkName) {
     browser.isVisible(homePage.tabs);
-    return browser.elements(homePage.tabs).click('=' + tabName);
+    return browser.elements(homePage.tabs).click('=' + linkName);
   });
 
   this.Then(/^total no of items on the page are "(\d+)"/, function (totalItems) {
+    return browser.isVisible(common.shopListItem);
     var expectedCount = browser.elements(common.noOfItems).value.length;
       return expect(expectedCount.toString()).to.equal(totalItems.toString());
   });

@@ -1,5 +1,5 @@
 var homePage = {
-  tabs: 'shop-tab a'
+  tabs: 'a'
 };
 
 module.exports = homePage;

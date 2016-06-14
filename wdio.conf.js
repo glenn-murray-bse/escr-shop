@@ -36,7 +36,9 @@ exports.config = {
 
   cucumberOpts: {
     require: ['./specs/steps/step-definition/step-definitions.js',
-      './specs/steps/step-definition/modal.js'],
+      './specs/steps/step-definition/modal.js',
+      './specs/steps/step-definition/checkout.js'
+    ],
     tags:['@pj']
   }
 };

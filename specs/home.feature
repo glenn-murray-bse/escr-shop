@@ -37,3 +37,7 @@ Feature: Test
     Then a dialog is displayed with title "Added to cart"
     When I click the "View Cart" dialog button
     And I should see "5" items in shopping Cart
+    And I wait for "1" seconds
+    And I click "CHECKOUT" link
+    And I wait for "1" seconds
+    And I should see "Checkout" form
