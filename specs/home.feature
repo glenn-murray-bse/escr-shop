@@ -26,6 +26,7 @@ Feature: Test
   @pj
   Scenario: Go to Men's Outwear page
     Given Go to the route "list/mens_outerwear"
+    And I wait for "5" seconds
     Then total no of items on the page are "16"
     When I click item 3
     Then the item "heading" is "Green Flex Fleece Zip Hoodie"

@@ -53,6 +53,7 @@ module.exports = function () {
 
   this.Then(/^I click item (\d+)/, function (itemNumber) {
     var itemId = parseInt(itemNumber - 1);
+    console.log(browser.elements(' .grid'));
     var element =  browser.elements('.grid a').value[itemId];
       return browser.elementIdClick(element.ELEMENT);
   });

@@ -16,12 +16,18 @@ exports.config = {
   //  'test/spec/mobile/**'
   //],
 
+  chromeDriver: './chromedriver',
+  directConnect: true,
+
   /**
    * capabilities
    */
   capabilities: [{
-    browserName: 'firefox'
-  }],
+    browserName: 'chrome'
+  },
+    {
+      'browserName': 'firefox'
+    }],
 
   /**
    * test configurations
