@@ -1,8 +1,8 @@
-urlUtils = require('../support/utils.js');
-var common = require('./../pageElements/common.js');
-var shopDetail = require('./../pageElements/shopDetail.js');
-var homePage = require('./../pageElements/homePage.js');
-var cart = require('./../pageElements/shopCart.js');
+urlUtils = require('../steps/support/utils.js');
+var common = require('./../steps/pageElements/common.js');
+var shopDetail = require('./../steps/pageElements/shopDetail.js');
+var homePage = require('./../steps/pageElements/homePage.js');
+var cart = require('./../steps/pageElements/shopCart.js');
 
 var assert = require('assert');
 var chai = require('chai');

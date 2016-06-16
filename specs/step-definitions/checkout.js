@@ -1,5 +1,5 @@
-var checkout = require('./../pageElements/checkout.js');
-var cart = require('./../pageElements/shopCart.js');
+var checkout = require('./../steps/pageElements/checkout.js');
+var cart = require('./../steps/pageElements/shopCart.js');
 var deepEqual = require('deep-equal');
 var chai = require('chai');
 var chaiAsPromised = require('chai-as-promised');

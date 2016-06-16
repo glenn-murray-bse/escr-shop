@@ -9,7 +9,7 @@ exports.config = {
    * specify test files
    */
   specs: [
-    './specs/*.feature'
+    './specs/**.feature'
   ],
   //exclude: [
   //  'test/spec/multibrowser/**',
@@ -23,9 +23,6 @@ exports.config = {
    * capabilities
    */
   capabilities: [{
-    browserName: 'chrome'
-  },
-    {
       'browserName': 'firefox'
     }],
 
@@ -41,9 +38,9 @@ exports.config = {
   reporters: ['dot'],
 
   cucumberOpts: {
-    require: ['./specs/steps/step-definition/step-definitions.js',
-      './specs/steps/step-definition/modal.js',
-      './specs/steps/step-definition/checkout.js'
+    require: ['./specs/step-definitions/step-definitions.js',
+      './specs/step-definitions/modal.js',
+      './specs/step-definitions/checkout.js'
     ],
     tags:['@pj']
   }
