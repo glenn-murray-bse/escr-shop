@@ -12,7 +12,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="shop-icons.html">
-<link rel="import" href="shop-image.html">
+<link rel="import" href="../bower_components/escr-image/escr-image.html">
 <link rel="import" href="shop-select.html">
 
 <dom-module id="shop-cart-item">
@@ -27,7 +27,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         margin-bottom: 24px;
       }
 
-      shop-image {
+      escr-image {
         width: 72px;
         height: 72px;
       }
@@ -167,7 +167,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
 
     <a href$="/detail/[[entry.item.category]]/[[entry.item.name]]" title$="[[entry.item.title]]">
-      <shop-image src="[[entry.item.image]]" alt="[[entry.item.title]]"></shop-image>
+      <escr-image src="[[entry.item.image]]" alt="[[entry.item.title]]"></escr-image>
     </a>
     <div class="flex">
       <div class="name">

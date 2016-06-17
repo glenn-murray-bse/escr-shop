@@ -14,7 +14,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="shop-button.html">
 <link rel="import" href="shop-category-data.html">
 <link rel="import" href="shop-common-styles.html">
-<link rel="import" href="shop-image.html">
+<link rel="import" href="../bower_components/escr-image/escr-image.html">
 <link rel="import" href="shop-select.html">
 
 <dom-module id="shop-detail">
@@ -32,17 +32,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         @apply(--layout-center-justified);
       }
 
-      shop-image {
+      escr-image {
         position: relative;
         margin: 64px 32px;
         width: 50%;
         max-width: 600px;
-        --shop-image-img: {
+        --escr-image-img: {
           @apply(--layout-fit);
         };
       }
 
-      shop-image::before {
+      escr-image::before {
         content: "";
         display: block;
         padding-top: 100%;
@@ -103,7 +103,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           @apply(--layout-center);
         }
 
-        shop-image {
+        escr-image {
           margin: 0;
           width: 80%;
         }
@@ -149,7 +149,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         failure="{{failure}}"></shop-category-data>
 
     <div id="content" hidden$="[[failure]]">
-      <shop-image alt="[[item.title]]" src="[[item.largeImage]]"></shop-image>
+      <escr-image alt="[[item.title]]" src="[[item.largeImage]]"></escr-image>
       <div class="detail" has-content$="[[_isDefined(item)]]">
         <h1>[[item.title]]</h1>
         <div class="price">[[_formatPrice(item.price)]]</div>

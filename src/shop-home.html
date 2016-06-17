@@ -10,7 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="shop-button.html">
-<link rel="import" href="shop-image.html">
+<link rel="import" href="../bower_components/escr-image/escr-image.html">
 <!--
 The shop-home element shows a list of categories of products and services.  It also shows any products
 and services marked as "Featured".
@@ -37,7 +37,7 @@ Example:
         outline: none;
       }
 
-      .image-link > shop-image::after {
+      .image-link > escr-image::after {
         display: block;
         content: '';
         position: absolute;
@@ -55,7 +55,7 @@ Example:
         outline: -webkit-focus-ring-color auto 5px;
       }
 
-      .image-link:focus > shop-image::after {
+      .image-link:focus > escr-image::after {
         opacity: 1;
       }
 
@@ -72,11 +72,11 @@ Example:
         width: 50%;
       }
 
-      shop-image {
+      escr-image {
         position: relative;
         height: 320px;
         overflow: hidden;
-        --shop-image-img: {
+        --escr-image-img: {
           position: absolute;
           top: 0;
           bottom: 0;
@@ -98,7 +98,7 @@ Example:
       }
 
       @media (max-width: 767px) {
-        shop-image {
+        escr-image {
           height: 240px;
         }
 
@@ -117,7 +117,7 @@ Example:
     <template is="dom-repeat" items="[[categories]]" strip-whitespace>
       <div class="item">
         <a class="image-link" href$="/list/[[item.name]]">
-          <shop-image src="[[item.image]]" alt="[[item.title]]" placeholder-img="[[item.placeholder]]"></shop-image>
+          <escr-image src="[[item.image]]" alt="[[item.title]]" placeholder-img="[[item.placeholder]]"></escr-image>
         </a>
         <h2>[[item.title]]</h2>
         <shop-button>
