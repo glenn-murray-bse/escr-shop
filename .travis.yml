@@ -20,7 +20,7 @@ before_script:
 - selenium-standalone start &
 script:
 - polymer test
-#- npm test
+- npm test
 after_success:
 - polymer build
 - ./firebase_deploy.sh $TRAVIS_BRANCH $FIREBASE_PROJECT_VINCE $FIREBASE_TOKEN_VINCE $FIREBASE_TOKEN_PROD $FIREBASE_PROJECT_PROD
