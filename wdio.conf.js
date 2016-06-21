@@ -11,10 +11,10 @@ exports.config = {
   specs: [
     './specs/**.feature'
   ],
-  //exclude: [
+  // exclude: [
   //  'test/spec/multibrowser/**',
   //  'test/spec/mobile/**'
-  //],
+  // ],
 
   chromeDriver: './chromedriver',
   directConnect: true,
@@ -32,15 +32,15 @@ exports.config = {
   logLevel: 'silent',
   coloredLogs: true,
   screenshotPath: 'shots',
-  waitforTimeout: 10000,
+  waitforTimeout: 15000,
   framework: 'cucumber',
 
   reporters: ['dot'],
 
   cucumberOpts: {
     require: ['./specs/step-definitions/step-definitions.js',
-      './specs/step-definitions/modal.js',
-      './specs/step-definitions/checkout.js'
+       './specs/step-definitions/modal.js',
+       './specs/step-definitions/checkout.js'
     ],
     tags:['@pj']
   }

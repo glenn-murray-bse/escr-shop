@@ -4,7 +4,7 @@ var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 var expect = chai.expect;
 
-var modal = require('./../steps/pageElements/modal.js');
+var modal = require('./../steps/pageComponents/modal.js');
 
 module.exports = function() {
 

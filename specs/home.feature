@@ -26,7 +26,7 @@ Feature: Test
   @pj
   Scenario: Go to Men's Outwear page
     Given Go to the route "list/mens_outerwear"
-    And I wait for "5" seconds
+    #And I wait for "5" seconds
     Then total no of items on the page are "16"
     When I click item 3
     Then the item "heading" is "Green Flex Fleece Zip Hoodie"
@@ -34,11 +34,27 @@ Feature: Test
     When I select "Size" from the "L" dropdown
     And I select "Quantity" from the "5" dropdown
     And I click "Add to Cart" button
-    And I wait for "1" seconds
+    #And I wait for "1" seconds
     Then a dialog is displayed with title "Added to cart"
     When I click the "View Cart" dialog button
     And I should see "5" items in shopping Cart
-    And I wait for "1" seconds
+    #And I wait for "1" seconds
     And I click "CHECKOUT" link
-    And I wait for "1" seconds
+    #And I wait for "1" seconds
     And I should see "Checkout" form
+    And I enter "apj@gmail.com" in "accountEmail" field
+    And I enter "04037332221" in "accountPhone" field
+    And I enter "Victoria" in "shipState" field
+    #And I wait for "3" seconds
+    And I click "Place Order" checkout button
+    #And I wait for "3" seconds
+    And the following field has error message:
+      | errorMessage    |
+      | Address         |
+      | City            |
+      | Zip/Postal Code |
+      | Cardholder Name |
+      | Card Number     |
+      | CVV             |
+
+

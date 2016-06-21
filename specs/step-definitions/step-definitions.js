@@ -1,8 +1,8 @@
 urlUtils = require('../steps/support/utils.js');
-var common = require('./../steps/pageElements/common.js');
-var shopDetail = require('./../steps/pageElements/shopDetail.js');
-var homePage = require('./../steps/pageElements/homePage.js');
-var cart = require('./../steps/pageElements/shopCart.js');
+var common = require('./../steps/pageComponents/common.js');
+var shopDetail = require('./../steps/pageComponents/shopDetail.js');
+var homePage = require('./../steps/pageComponents/homePage.js');
+var cart = require('./../steps/pageComponents/shopCart.js');
 
 var assert = require('assert');
 var chai = require('chai');
@@ -30,7 +30,7 @@ module.exports = function () {
   this.Then(/^I should see "(.*)" heading/, function (heading) {
     var selector = common.heading + heading;
     var expectedHeading = browser.getText(selector);
-    console.log("expectedHeading :" + expectedHeading);
+    //console.log("expectedHeading :" + expectedHeading);
     return expect(heading).to.equal(expectedHeading);
 
   });
@@ -53,13 +53,18 @@ module.exports = function () {
 
   this.Then(/^I click item (\d+)/, function (itemNumber) {
     var itemId = parseInt(itemNumber - 1);
-    console.log(browser.elements(' .grid'));
+   // console.log(browser.elements(' .grid'));
     var element =  browser.elements('.grid a').value[itemId];
       return browser.elementIdClick(element.ELEMENT);
   });
 
   this.Then(/^I click "(.*)" button/, function (buttonName) {
     return browser.element('button='+buttonName).click();
+  });
+
+  this.Then(/^I enter "(.*)" in "(.*)" field/, function (value, fieldName) {
+    var selector = "//input[@name='"+fieldName+"']";
+    return browser.clearElement(selector).setValue(selector, value);
   });
 
   this.Then(/^I click "(.*)" link/, function (tabName) {
@@ -81,7 +86,7 @@ module.exports = function () {
 
   this.Then(/^I should see "(\d+)" items in shopping Cart/, function (items) {
     var expectedCount = browser.getText(cart.itemsInBasket);
-    console.log(expectedCount);
+    //console.log(expectedCount);
     return expect(expectedCount).to.equal(items);
   });
 };
